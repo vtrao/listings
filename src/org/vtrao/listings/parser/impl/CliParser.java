@@ -2,9 +2,8 @@ package org.vtrao.listings.parser.impl;
 
 import org.vtrao.listings.parser.Facade;
 import org.vtrao.listings.parser.Parser;
-import org.vtrao.listings.response.Response;
+import org.vtrao.listings.commons.response.Response;
 
-import java.io.InputStreamReader;
 import java.util.Scanner;
 
 public class CliParser implements Parser {

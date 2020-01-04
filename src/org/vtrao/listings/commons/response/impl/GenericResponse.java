@@ -1,13 +1,14 @@
-package org.vtrao.listings.response.impl;
+package org.vtrao.listings.commons.response.impl;
 
 
-import org.vtrao.listings.response.Response;
+import org.vtrao.listings.commons.response.Response;
 
 public class GenericResponse implements Response {
 
     private String status;
     private String message;
     private String hrMessage;
+    private String data;
     private int code;
 
     @Override
@@ -23,6 +24,11 @@ public class GenericResponse implements Response {
     @Override
     public String getHrMessage() {
         return hrMessage == null ? message : hrMessage;
+    }
+
+    @Override
+    public String getData() {
+        return data == null ? message : data;
     }
 
     @Override

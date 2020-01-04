@@ -1,10 +1,11 @@
-package org.vtrao.listings.response.impl;
+package org.vtrao.listings.commons.response.impl;
 
-import org.vtrao.listings.response.Response;
+import org.vtrao.listings.commons.response.Response;
 
 public class ListingCliResponse implements Response {
     private String message;
     private int code;
+    private String data;
 
     public void setMessage(String message) {
         this.message = message;
@@ -27,6 +28,11 @@ public class ListingCliResponse implements Response {
     @Override
     public String getHrMessage() {
         return message;
+    }
+
+    @Override
+    public String getData() {
+        return data == null ? message : data;
     }
 
     @Override

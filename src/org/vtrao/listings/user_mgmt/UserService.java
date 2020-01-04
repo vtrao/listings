@@ -1,13 +1,20 @@
 package org.vtrao.listings.user_mgmt;
 
+import org.vtrao.listings.commons.exceptions.ListingException;
+import org.vtrao.listings.commons.exceptions.UserException;
+import org.vtrao.listings.commons.response.Response;
 import org.vtrao.listings.user_mgmt.model.User;
 
 public interface UserService {
-    boolean registerUser(User user);
+    void registerUser(User user) throws ListingException;
 
-    boolean updateUser(User user);
+    void updateUser(User user) throws UserException;
 
-    User getUser(String userName);
+    void deleteUser(User user) throws UserException;
 
-    User getUserByEmailId(String emailId);
+    boolean checkUser(String userName) throws UserException;
+
+    User getUser(String userName) throws UserException;
+
+    User getUserByEmailId(String emailId) throws UserException;
 }
