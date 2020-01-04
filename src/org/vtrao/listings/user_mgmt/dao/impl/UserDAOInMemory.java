@@ -1,8 +1,9 @@
 package org.vtrao.listings.user_mgmt.dao.impl;
 
+import org.vtrao.listings.commons.GlobalConstants;
 import org.vtrao.listings.commons.exceptions.UserException;
 import org.vtrao.listings.commons.exceptions.UserRegisterException;
-import org.vtrao.listings.user_mgmt.commons.Constants;
+import org.vtrao.listings.user_mgmt.UserConstants;
 import org.vtrao.listings.user_mgmt.dao.UserDAO;
 import org.vtrao.listings.user_mgmt.model.User;
 
@@ -10,6 +11,7 @@ import java.util.HashMap;
 
 public class UserDAOInMemory implements UserDAO {
     private static final String USER_NULL_INPUT = "invalid input: null";
+    // TODO: Concurrent access
     private HashMap<String, User> userData = new HashMap();
 
     @Override
@@ -21,7 +23,7 @@ public class UserDAOInMemory implements UserDAO {
         if (null == userExists) {
             userData.put(user.getUserName(), user);
         } else {
-            throw new UserRegisterException(Constants.ERROR_USER_EXISTS);
+            throw new UserRegisterException(UserConstants.ERROR_USER_EXISTS);
         }
     }
 
@@ -45,21 +47,21 @@ public class UserDAOInMemory implements UserDAO {
 
     @Override
     public boolean checkUserByEmail(String userName)throws UserException {
-        throw new UserException(Constants.UNSUPPORTED_OPERATION);
+        throw new UserException(GlobalConstants.UNSUPPORTED_OPERATION);
     }
 
     @Override
     public void deleteUser(User user) throws UserException {
-        throw new UserException(Constants.UNSUPPORTED_OPERATION);
+        throw new UserException(GlobalConstants.UNSUPPORTED_OPERATION);
     }
 
     @Override
     public void updateUser(User user) throws UserException {
-        throw new UserException(Constants.UNSUPPORTED_OPERATION);
+        throw new UserException(GlobalConstants.UNSUPPORTED_OPERATION);
     }
 
     @Override
     public User getUserByEmail(String email) throws UserException {
-        throw new UserException(Constants.UNSUPPORTED_OPERATION);
+        throw new UserException(GlobalConstants.UNSUPPORTED_OPERATION);
     }
 }
