@@ -1,6 +1,7 @@
 package org.vtrao.listings.user_mgmt.controller.impl;
 
 import org.vtrao.listings.commons.GlobalConstants;
+import org.vtrao.listings.commons.Utils;
 import org.vtrao.listings.commons.exceptions.ListingAppException;
 import org.vtrao.listings.commons.response.ResponseConstants;
 import org.vtrao.listings.commons.response.impl.ListingCliResponse;
@@ -8,7 +9,6 @@ import org.vtrao.listings.user_mgmt.controller.UserCliController;
 import org.vtrao.listings.user_mgmt.model.User;
 import org.vtrao.listings.user_mgmt.service.UserService;
 
-import java.net.HttpURLConnection;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 

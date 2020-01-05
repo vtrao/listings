@@ -19,6 +19,14 @@ public class CliParser implements Parser {
         this.prompt = prompt;
     }
 
+    @Override
+    public String run(String input) {
+        String[] inputStrings = input.split("\\s+|\\s+'.'");
+        Response output = facade.execute(inputStrings);
+        return output.getHrMessage();
+    }
+
+    @Override
     public void run() {
         System.out.println("Welcome to the CLI of " +  purpose + ", q or quit to exit, h or help for help");
         Scanner scanner = new Scanner(System.in);

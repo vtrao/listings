@@ -2,6 +2,7 @@ package org.vtrao.listings.listing_mgmt.controller.impl;
 
 import org.vtrao.listings.cli_parser.cli_appfacade.CliFacadeConstants;
 import org.vtrao.listings.commons.GlobalConstants;
+import org.vtrao.listings.commons.Utils;
 import org.vtrao.listings.commons.authentication.Authentication;
 import org.vtrao.listings.commons.exceptions.ListingAppException;
 import org.vtrao.listings.commons.exceptions.UserException;
@@ -148,7 +149,7 @@ public class ListingCliControllerImpl implements ListingCliController {
     }
 
     @Override
-    public void getListingByCategory(String[] inputStrings, ListingCliResponse response) {
+    public void getListingByCategory(String[] inputStrings, ListingCliResponse response)  {
         // Parameter 1: <username>
         if (!parseUserAndAuthenticate(inputStrings, response, ListingCommandType.GL)) {
             return;
@@ -157,7 +158,7 @@ public class ListingCliControllerImpl implements ListingCliController {
         // Parameter 2: <category>
         java.lang.String category = null;
         if (inputStrings.length >= 3) {
-            category = inputStrings[2];
+            category = removePreAndPostInvertedComma(inputStrings[2]);
         } else {
             commandFormat(response, ListingCommandType.GL);
             return;
@@ -183,7 +184,11 @@ public class ListingCliControllerImpl implements ListingCliController {
                 response.setMessage(ListingConstants.ERROR_NOT_FOUND);
             } else {
                 StringBuilder outputList = new StringBuilder();
-                listingsList.forEach(listing -> outputList.append(listing.toString() + "\n"));
+                int index = 0;
+                for(; index < listingsList.size() - 1 ; ++index) {
+                    outputList.append(listingsList.get(index) + "\n");
+                }
+                outputList.append(listingsList.get(index));
                 response.setMessage(outputList.toString());
             }
         } catch (ListingAppException ex) {

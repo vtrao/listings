@@ -1,0 +1,20 @@
+Success
+100001
+Phone_model_8|Black_color,brand_new|1000.0|Sun Jan 05 19:14:37 IST 2020|Electronics|user1
+100002
+Success
+Error - user already existing
+100003
+T-shirt|White_color|20.0|Sun Jan 05 19:14:37 IST 2020|Sports|user2
+Error - category not found
+T-shirt|White_color|20.0|Sun Jan 05 19:14:37 IST 2020|Sports|user2
+Black_shoes|Training_shoes|100.0|Sun Jan 05 19:14:37 IST 2020|Sports|user1
+Black_shoes|Training_shoes|100.0|Sun Jan 05 19:14:37 IST 2020|Sports|user1
+T-shirt|White_color|20.0|Sun Jan 05 19:14:37 IST 2020|Sports|user2
+Sports
+Error - listing owner mismatch
+Success
+Sports
+Success
+Electronics
+Error - unknown user

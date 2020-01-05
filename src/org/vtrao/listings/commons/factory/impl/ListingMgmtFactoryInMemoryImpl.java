@@ -24,7 +24,7 @@ public class ListingMgmtFactoryInMemoryImpl implements ListingMgmtFactory {
                                           CategoryMgmtFactory categoryMgmtFactory) {
         this.authenticationFactory = authenticationFactory;
         this.categoryMgmtFactory = categoryMgmtFactory;
-        this.listingDAO = new ListingDAOInMemory();
+        this.listingDAO = new ListingDAOInMemory(categoryMgmtFactory.getDAO());
         this.listingValidator = new ListingValidator();
         this.listingService = new ListingServiceImpl(getDAO(), getListingValidator(), categoryMgmtFactory.getService());
         this.listingCliController = new ListingCliControllerImpl(authenticationFactory.getAuthentication(), getService());
