@@ -1,4 +1,4 @@
-package org.vtrao.listings.commons.authentication.impl;
+package org.vtrao.listings.commons.authentication;
 
 import org.vtrao.listings.commons.exceptions.UserException;
 

@@ -1,6 +1,6 @@
 package org.vtrao.listings.commons.exceptions;
 
-public class UserException extends ListingException {
+public class UserException extends ListingAppException {
     public UserException() {
     }
 

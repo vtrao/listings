@@ -2,7 +2,7 @@ package org.vtrao.listings.user_mgmt.service.impl;
 
 
 import org.vtrao.listings.commons.GlobalConstants;
-import org.vtrao.listings.commons.exceptions.ListingException;
+import org.vtrao.listings.commons.exceptions.ListingAppException;
 import org.vtrao.listings.commons.exceptions.UserException;
 import org.vtrao.listings.commons.validate.Validate;
 import org.vtrao.listings.user_mgmt.service.UserService;
@@ -13,24 +13,20 @@ import org.vtrao.listings.user_mgmt.model.User;
 public class UserServiceBaseImpl implements UserService {
 
     private UserDAO userDAO;
-    private Validate userNameValidator;
+    private Validate userValidator;
 
-    public UserServiceBaseImpl(UserDAO userDAO, Validate userNameValidator) {
+    public UserServiceBaseImpl(UserDAO userDAO, Validate userValidator) {
         this.userDAO = userDAO;
-        this.userNameValidator = userNameValidator;
+        this.userValidator = userValidator;
     }
 
     @Override
-    public void registerUser(User user) throws ListingException {
+    public void registerUser(User user) throws ListingAppException {
         if (null == user) {
             throw new UserException(UserConstants.ERROR_USER_NULL_INPUT);
         }
-        validateUser(user);
+        userValidator.validate(user);
         userDAO.insertUser(user);
-    }
-
-    private void validateUser(User user) throws ListingException {
-        userNameValidator.validate(user.getUserName());
     }
 
     @Override

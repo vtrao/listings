@@ -1,6 +1,5 @@
 package org.vtrao.listings;
 
-
 import org.vtrao.listings.cli_parser.Parser;
 import org.vtrao.listings.cli_parser.cli_appfacade.Facade;
 import org.vtrao.listings.cli_parser.cli_appfacade.impl.ListingFacade;

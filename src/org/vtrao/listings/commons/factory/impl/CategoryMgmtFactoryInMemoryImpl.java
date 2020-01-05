@@ -12,29 +12,37 @@ import org.vtrao.listings.commons.factory.CategoryMgmtFactory;
 import org.vtrao.listings.commons.validate.Validate;
 
 public class CategoryMgmtFactoryInMemoryImpl implements CategoryMgmtFactory {
-    AuthenticationFactory authenticationFactory;
+    private AuthenticationFactory authenticationFactory;
+    private CategoryCliController categoryCliController;
+    private CategoryDAO categoryDAO;
+    private CategoryService categoryService;
+    private Validate categoryValidator;
 
     public CategoryMgmtFactoryInMemoryImpl(AuthenticationFactory authenticationFactory) {
         this.authenticationFactory = authenticationFactory;
+        this.categoryDAO = new CategoryDAOInMemoryImpl();
+        this.categoryValidator = new CategoryValidator();
+        this.categoryService = new CategoryServiceImpl(getDAO(), getCategoryValidator());
+        this.categoryCliController = new CategoryCliControllerImpl(authenticationFactory.getAuthentication(), getService());
     }
 
     @Override
     public CategoryCliController getCliController() {
-        return new CategoryCliControllerImpl(authenticationFactory.getAuthentication(), getService());
+        return categoryCliController;
     }
 
     @Override
     public CategoryDAO getDAO() {
-        return new CategoryDAOInMemoryImpl();
+        return categoryDAO;
     }
 
     @Override
     public CategoryService getService() {
-        return new CategoryServiceImpl(getDAO(), getCategoryValidator());
+        return categoryService;
     }
 
     @Override
     public Validate getCategoryValidator() {
-        return new CategoryValidator();
+        return categoryValidator;
     }
 }

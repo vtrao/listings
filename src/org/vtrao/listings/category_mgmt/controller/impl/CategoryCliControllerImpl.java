@@ -3,7 +3,7 @@ package org.vtrao.listings.category_mgmt.controller.impl;
 import org.vtrao.listings.category_mgmt.controller.CategoryCliController;
 import org.vtrao.listings.category_mgmt.service.CategoryService;
 import org.vtrao.listings.commons.GlobalConstants;
-import org.vtrao.listings.commons.authentication.impl.Authentication;
+import org.vtrao.listings.commons.authentication.Authentication;
 import org.vtrao.listings.commons.response.impl.ListingCliResponse;
 
 public class CategoryCliControllerImpl implements CategoryCliController {

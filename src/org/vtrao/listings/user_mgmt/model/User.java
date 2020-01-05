@@ -1,6 +1,10 @@
 package org.vtrao.listings.user_mgmt.model;
 
 public class User {
+    private String userName;
+    private String email;
+    private String avatar;
+
     public String getUserName() {
         return userName;
     }
@@ -25,7 +29,4 @@ public class User {
         this.avatar = avatar;
     }
 
-    private String userName;
-    private String email;
-    private String avatar;
 }

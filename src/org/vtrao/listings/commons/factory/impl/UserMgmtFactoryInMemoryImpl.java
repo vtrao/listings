@@ -8,26 +8,37 @@ import org.vtrao.listings.user_mgmt.dao.UserDAO;
 import org.vtrao.listings.user_mgmt.dao.impl.UserDAOInMemory;
 import org.vtrao.listings.user_mgmt.service.UserService;
 import org.vtrao.listings.user_mgmt.service.impl.UserServiceBaseImpl;
-import org.vtrao.listings.user_mgmt.validators.UserNameValidator;
+import org.vtrao.listings.user_mgmt.validators.UserValidator;
 
 public class UserMgmtFactoryInMemoryImpl implements UserMgmtFactory {
+    private UserCliController userCliController;
+    private UserDAO userDAO;
+    private UserService userService;
+    private Validate userValidator;
+
+    public UserMgmtFactoryInMemoryImpl() {
+        this.userDAO = new UserDAOInMemory();
+        this.userValidator = new UserValidator();
+        this.userService = new UserServiceBaseImpl(getDAO(), getUserNameValidator());
+        this.userCliController = new UserCliControllerImpl(getService());
+    }
     @Override
     public UserCliController getCliController() {
-        return new UserCliControllerImpl(getService());
+        return userCliController;
     }
 
     @Override
     public UserDAO getDAO() {
-        return new UserDAOInMemory();
+        return userDAO;
     }
 
     @Override
     public UserService getService() {
-        return new UserServiceBaseImpl(getDAO(), getUserNameValidator());
+        return userService;
     }
 
     @Override
     public Validate getUserNameValidator() {
-        return new UserNameValidator();
+        return userValidator;
     }
 }

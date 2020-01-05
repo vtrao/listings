@@ -1,12 +1,11 @@
 package org.vtrao.listings.user_mgmt.service;
 
-import org.vtrao.listings.commons.exceptions.ListingException;
+import org.vtrao.listings.commons.exceptions.ListingAppException;
 import org.vtrao.listings.commons.exceptions.UserException;
-import org.vtrao.listings.commons.response.Response;
 import org.vtrao.listings.user_mgmt.model.User;
 
 public interface UserService {
-    void registerUser(User user) throws ListingException;
+    void registerUser(User user) throws ListingAppException;
 
     User getUser(String userName) throws UserException;
 

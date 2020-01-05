@@ -8,16 +8,16 @@ import org.vtrao.listings.user_mgmt.dao.UserDAO;
 import org.vtrao.listings.user_mgmt.model.User;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class UserDAOInMemory implements UserDAO {
-    private static final String USER_NULL_INPUT = "invalid input: null";
     // TODO: Concurrent access
-    private HashMap<String, User> userData = new HashMap();
+    private Map<String, User> userData = new HashMap();
 
     @Override
     public void insertUser(User user) throws UserException {
         if (null == user) {
-            throw new UserException(USER_NULL_INPUT);
+            throw new UserException(UserConstants.ERROR_USER_NULL_INPUT);
         }
         User userExists = getUser(user.getUserName());
         if (null == userExists) {
@@ -30,7 +30,7 @@ public class UserDAOInMemory implements UserDAO {
     @Override
     public User getUser(String userName) throws UserException {
         if (null == userName) {
-            throw new UserException(USER_NULL_INPUT);
+            throw new UserException(UserConstants.ERROR_USER_NULL_INPUT);
         }
         return userData.get(userName);
     }
@@ -38,7 +38,7 @@ public class UserDAOInMemory implements UserDAO {
     @Override
     public boolean checkUser(String userName)throws UserException {
         if (null == userName) {
-            throw new UserException(USER_NULL_INPUT);
+            throw new UserException(UserConstants.ERROR_USER_NULL_INPUT);
         }
         // TODO: Probablistic data structure like Bloom filter
         //  when the userbase grows and for quicker response

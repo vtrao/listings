@@ -26,9 +26,11 @@ public class CliParser implements Parser {
         while (loop) {
             System.out.print(prompt + SPACE);
             String input = scanner.nextLine();
-            String[] inputStrings = input.split("\\s+");
+            String[] inputStrings = input.split("\\s+|\\s+'.'");
             System.out.println(input);
             switch (inputStrings[0].toUpperCase()) {
+                case "\n":
+                    break;
                 case "Q":
                 case "QUIT":
                     loop = false;
