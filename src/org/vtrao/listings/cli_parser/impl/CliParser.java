@@ -4,7 +4,11 @@ import org.vtrao.listings.cli_parser.cli_appfacade.Facade;
 import org.vtrao.listings.cli_parser.Parser;
 import org.vtrao.listings.commons.response.Response;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class CliParser implements Parser {
     public static final String SPACE = " ";
@@ -19,11 +23,22 @@ public class CliParser implements Parser {
         this.prompt = prompt;
     }
 
+    public static final String REGEX_CLI = "([^']\\S*|'.+?')\\s*";
+
     @Override
     public String run(String input) {
-        String[] inputStrings = input.split("\\s+|\\s+'.'");
+        String[] inputStrings = splitInput(input);
         Response output = facade.execute(inputStrings);
         return output.getHrMessage();
+    }
+
+    private String[] splitInput(String input) {
+        List<String> list = new ArrayList();
+        Matcher m = Pattern.compile(REGEX_CLI).matcher(input);
+        while (m.find()) {
+            list.add(m.group(1));
+        }
+        return list.toArray(new String[0]);
     }
 
     @Override
@@ -34,7 +49,7 @@ public class CliParser implements Parser {
         while (loop) {
             System.out.print(prompt + SPACE);
             String input = scanner.nextLine();
-            String[] inputStrings = input.split("\\s+|\\s+'.'");
+            String[] inputStrings = splitInput(input);
             System.out.println(input);
             switch (inputStrings[0].toUpperCase()) {
                 case "\n":
