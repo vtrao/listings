@@ -57,6 +57,7 @@ public class Main {
             Parser parser = new CliParser("#", "Listing", listingFacade);
             parser.run();
             System.out.println("Thank You!!");
+            System.exit(0);
         }
     }
 }
