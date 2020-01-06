@@ -1,10 +1,10 @@
 REGISTER user1
-CREATE_LISTING user1 'Phone_model_8' 'Black_color,brand_new' 1000 'Electronics'
+CREATE_LISTING user1 'Phone model 8' 'Black color, brand new' 1000 'Electronics'
 GET_LISTING user1 100001
-CREATE_LISTING user1 'Black_shoes' 'Training_shoes' 100 'Sports'
+CREATE_LISTING user1 'Black shoes' 'Training shoes' 100 'Sports'
 REGISTER user2
 REGISTER user2
-CREATE_LISTING user2 'T-shirt' 'White_color' 20 'Sports'
+CREATE_LISTING user2 'T-shirt' 'White color' 20 'Sports'
 GET_LISTING user1 100003
 GET_CATEGORY user1 'Fashion' sort_time asc
 GET_CATEGORY user1 'Sports' sort_time dsc
