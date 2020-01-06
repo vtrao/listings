@@ -1,12 +1,12 @@
 # Listings Demo
-######Author: Venkata Thippanna Rao
+###### Author: Venkata Thippanna Rao
 
-####System Requirements
+#### System Requirements
 Java version: JDK 8
 
 Build manager: Maven 3.5.0
 
-####Steps to run the app
+#### Steps to run the app
 ##### Unzip the source code zip 
 ###### $cd <source_directory>
 ##### Build the code base
@@ -18,7 +18,7 @@ Build manager: Maven 3.5.0
 ###### Note: <outputfile_location> isoptional
 ###### Example: sh run.sh tests/testInputInAssignment.txt testout.txt
 
-#####Important NOTE: Several tests are run, please find the same in <source_directory>tests/ and corresponding output in <source_directory>tests/testoutput
+##### Important NOTE: Several tests are run, please find the same in <source_directory>tests/ and corresponding output in <source_directory>tests/testoutput
 
 
 
