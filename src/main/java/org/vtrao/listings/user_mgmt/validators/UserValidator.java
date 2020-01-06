@@ -15,7 +15,7 @@ public class UserValidator implements Validate {
             throw new UserRegisterException(UserValidationConstants.USER_NAME_NULL);
         }
 
-        if ( userName.length() < 5) {
+        if ( userName.length() < UserValidationConstants.USER_NAME_LENGTH) {
             throw new UserRegisterException(UserValidationConstants.USER_NAME_SHORT);
         }
 
