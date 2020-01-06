@@ -23,11 +23,12 @@ public class CliParser implements Parser {
         this.prompt = prompt;
     }
 
-    public static final String REGEX_CLI = "([^']\\S*|'.+?')\\s*";
+    public static final String REGEX_CLI = "([^']\\S*|'.*?')\\s*";
 
     @Override
     public String run(String input) {
         String[] inputStrings = splitInput(input);
+        System.out.println(prompt + SPACE + input);
         Response output = facade.execute(inputStrings);
         return output.getHrMessage();
     }
@@ -50,7 +51,6 @@ public class CliParser implements Parser {
             System.out.print(prompt + SPACE);
             String input = scanner.nextLine();
             String[] inputStrings = splitInput(input);
-            System.out.println(input);
             switch (inputStrings[0].toUpperCase()) {
                 case "\n":
                     break;

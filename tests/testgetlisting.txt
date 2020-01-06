@@ -1,0 +1,9 @@
+register user1
+register user2
+CREATE_LISTING user1 'Phone model 8' 'Black color, brand new' 1234 'Electronics'
+CREATE_LISTING user1 'Phone model 8' 'Black color, brand new' 12435 'Electronics'
+get_listing user1 100001
+get_listing user2 100001
+get_listing asdad 100001
+get_listing user1 100024
+get_listing user1 sdfssf

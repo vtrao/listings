@@ -1,0 +1,45 @@
+Success
+Error - No categories yet! Create listings to populate categories
+100001
+100002
+100003
+Error - unknown user
+electronics
+100004
+100005
+electronics
+100006
+100007
+100008
+100009
+Phone model 8X|Black color, brand new|1003.0|Mon Jan 06 09:54:49 IST 2020|electronics|user1
+Phone model 8|Black color, brand new|1010.0|Mon Jan 06 09:54:49 IST 2020|electronics|user1
+Phone model 8i|Black color, brand new|9020.0|Mon Jan 06 09:54:49 IST 2020|electronics|user1
+Phone model 8|Black color, brand new|1004.0|Mon Jan 06 09:54:49 IST 2020|electronics1|user1
+Phone model 8|Black color, brand new|1005.0|Mon Jan 06 09:54:49 IST 2020|electronics1|user1
+Phone model 8|Black color, brand new|1007.0|Mon Jan 06 09:54:49 IST 2020|electronics1|user1
+Phone model 8|Black color, brand new|1001.0|Mon Jan 06 09:54:49 IST 2020|electronics2|user1
+Phone model 8|Black color, brand new|1002.0|Mon Jan 06 09:54:49 IST 2020|electronics2|user1
+Phone model 8|Black color, brand new|1006.0|Mon Jan 06 09:54:49 IST 2020|electronics2|user1
+electronics
+Success
+electronics2
+Success
+electronics1
+Success
+electronics
+Success
+Success
+Success
+Success
+Success
+electronics2
+Error - not found
+Error - not found
+Phone model 8|Black color, brand new|1002.0|Mon Jan 06 09:54:49 IST 2020|electronics2|user1
+Success
+electronics
+Error - not found
+Error - not found
+Error - not found
+electronics

@@ -10,6 +10,7 @@ public interface ListingDAO {
     long insertListing(Listing listing) throws ListingException;
     void deleteListing(long listingId, String userId) throws ListingException;
     Listing getListing(long listingId) throws ListingException;
+    void checkListing(Listing listing) throws ListingException;
     List<Listing> getListingByCategory(String categoryId,
                                        ListingService.SortType sortType,
                                        ListingService.SortOrder sortOrder,

@@ -1,0 +1,25 @@
+Success
+Error - unknown user
+Price should be a valid number 
+GET_CATEGORY <username> <category> {sort_price|sort_time} {asc|dsc}
+<title> cant be very short should be 2 chars long 
+CREATE_LISTING <username> <title> <description> <price> <category>
+<title> cant be very short should be 2 chars long 
+CREATE_LISTING <username> <title> <description> <price> <category>
+<description> cant be very short should be 2 chars long 
+CREATE_LISTING <username> <title> <description> <price> <category>
+<description> cant be very short should be 2 chars long 
+CREATE_LISTING <username> <title> <description> <price> <category>
+<category> cant be very short should be 2 chars long 
+CREATE_LISTING <username> <title> <description> <price> <category>
+<category> cant be very short should be 2 chars long 
+CREATE_LISTING <username> <title> <description> <price> <category>
+100001
+Listing with the provided details already exists, please check  100001
+Listing with the provided details already exists, please check  100001
+Success
+100002
+100003
+100004
+100005
+100006

@@ -1,0 +1,7 @@
+register u
+register user1
+register user1
+register venkata
+register user1
+register 12
+register 1

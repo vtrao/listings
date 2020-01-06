@@ -1,0 +1,15 @@
+register user1
+CREATE_LISTING user1 'Phone model 8' 'Black color, brand new' 10001 'Electronics'
+CREATE_LISTING user1 'Phone model 8X' 'Black color, brand new' 10002 'Electronics'
+CREATE_LISTING user1 'Phone model 8I' 'Black color, brand new' 9000 'Electronics'
+register user2
+get_category userxyz 'electronics' sort_price asc
+get_category user2 'electronics' sort_pric asc
+get_category user2 'electronics' sort_price ascasd
+get_category user2 'electronics123' sort_price asc
+get_category user2 'electronics' sort_price asc
+get_category user2 'electronics' sort_price dsc
+get_category user2 'electronics' sort_time asc
+get_category user2 'electronics' sort_time dsc
+get_category user2 'Electronics' sort_time dsc
+get_category user2 'ElectronicS' sort_time dsc

@@ -1,0 +1,29 @@
+Success
+100001
+100002
+100003
+Success
+Error - unknown user
+Invalid sort type: allowed {sort_price|sort_time} 
+GET_CATEGORY <username> <category> {sort_price|sort_time} {asc|dsc}
+Invalid sort order: allowed {asc|dsc} 
+GET_CATEGORY <username> <category> {sort_price|sort_time} {asc|dsc}
+Error - category not found
+Phone model 8I|Black color, brand new|9000.0|Mon Jan 06 09:17:41 IST 2020|Electronics|user1
+Phone model 8|Black color, brand new|10001.0|Mon Jan 06 09:17:41 IST 2020|Electronics|user1
+Phone model 8X|Black color, brand new|10002.0|Mon Jan 06 09:17:41 IST 2020|Electronics|user1
+Phone model 8X|Black color, brand new|10002.0|Mon Jan 06 09:17:41 IST 2020|Electronics|user1
+Phone model 8|Black color, brand new|10001.0|Mon Jan 06 09:17:41 IST 2020|Electronics|user1
+Phone model 8I|Black color, brand new|9000.0|Mon Jan 06 09:17:41 IST 2020|Electronics|user1
+Phone model 8|Black color, brand new|10001.0|Mon Jan 06 09:17:41 IST 2020|Electronics|user1
+Phone model 8X|Black color, brand new|10002.0|Mon Jan 06 09:17:41 IST 2020|Electronics|user1
+Phone model 8I|Black color, brand new|9000.0|Mon Jan 06 09:17:41 IST 2020|Electronics|user1
+Phone model 8I|Black color, brand new|9000.0|Mon Jan 06 09:17:41 IST 2020|Electronics|user1
+Phone model 8X|Black color, brand new|10002.0|Mon Jan 06 09:17:41 IST 2020|Electronics|user1
+Phone model 8|Black color, brand new|10001.0|Mon Jan 06 09:17:41 IST 2020|Electronics|user1
+Phone model 8I|Black color, brand new|9000.0|Mon Jan 06 09:17:41 IST 2020|Electronics|user1
+Phone model 8X|Black color, brand new|10002.0|Mon Jan 06 09:17:41 IST 2020|Electronics|user1
+Phone model 8|Black color, brand new|10001.0|Mon Jan 06 09:17:41 IST 2020|Electronics|user1
+Phone model 8I|Black color, brand new|9000.0|Mon Jan 06 09:17:41 IST 2020|Electronics|user1
+Phone model 8X|Black color, brand new|10002.0|Mon Jan 06 09:17:41 IST 2020|Electronics|user1
+Phone model 8|Black color, brand new|10001.0|Mon Jan 06 09:17:41 IST 2020|Electronics|user1

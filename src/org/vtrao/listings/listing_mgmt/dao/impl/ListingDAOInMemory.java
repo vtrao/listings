@@ -8,12 +8,14 @@ import org.vtrao.listings.listing_mgmt.dao.ListingDAO;
 import org.vtrao.listings.listing_mgmt.model.Listing;
 import org.vtrao.listings.listing_mgmt.service.ListingService;
 import org.vtrao.listings.category_mgmt.dao.CategoryDAO.UpdateCategoryListingType;
+import org.vtrao.listings.listing_mgmt.validators.ListingValidationConstants;
 
 import java.util.*;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.logging.Logger;
 
 public class ListingDAOInMemory implements ListingDAO {
@@ -47,6 +49,24 @@ public class ListingDAOInMemory implements ListingDAO {
 
         updateCategoryListings(listing.getCategoryId(), UpdateCategoryListingType.NEW);
         return listing.getListingId();
+    }
+
+    @Override
+    public void checkListing(Listing inputListing) throws ListingException {
+        AtomicReference<Long> existingListingId = new AtomicReference(new Long(-1));
+        // this helps for idempotency, need to fine tune
+        listingData.forEach( (id,listing)-> {
+            if ( listing.getDescription().equalsIgnoreCase(inputListing.getDescription())
+            && listing.getTitle().equalsIgnoreCase(inputListing.getTitle())
+            && listing.getCategoryId().equalsIgnoreCase(inputListing.getCategoryId())
+            && listing.getPrice() == inputListing.getPrice()
+            && listing.getUserId().equalsIgnoreCase(inputListing.getUserId())) {
+                existingListingId.set(id);
+            }
+        });
+        if ( existingListingId.get() != -1 ) {
+            throw new ListingException(ListingValidationConstants.ERROR_LISTING_EXISTS + existingListingId.get());
+        }
     }
 
     @Override

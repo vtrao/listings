@@ -1,0 +1,39 @@
+register user1
+get_top_category user1
+CREATE_LISTING user1 'Phone model 8' 'Black color, brand new' 1010 'electronics'
+CREATE_LISTING user1 'Phone model 8i' 'Black color, brand new' 9020 'electronics'
+CREATE_LISTING user1 'Phone model 8X' 'Black color, brand new' 1003 'electronics'
+get_top_category user123
+get_top_category user1
+CREATE_LISTING user1 'Phone model 8' 'Black color, brand new' 1005 'electronics1'
+CREATE_LISTING user1 'Phone model 8' 'Black color, brand new' 1006 'electronics2'
+get_top_category user1
+CREATE_LISTING user1 'Phone model 8' 'Black color, brand new' 1007 'electronics1'
+CREATE_LISTING user1 'Phone model 8' 'Black color, brand new' 1004 'electronics1'
+CREATE_LISTING user1 'Phone model 8' 'Black color, brand new' 1001 'electronics2'
+CREATE_LISTING user1 'Phone model 8' 'Black color, brand new' 1002 'electronics2'
+get_category user1 'electronics' sort_price asc
+get_category user1 'electronics1' sort_price asc
+get_category user1 'electronics2' sort_price asc
+get_top_category user1
+delete_listing user1 100001
+get_top_category user1
+delete_listing user1 100005
+get_top_category user1
+delete_listing user1 100006
+get_top_category user1
+delete_listing user1 100002
+delete_listing user1 100003
+delete_listing user1 100004
+delete_listing user1 100007
+delete_listing user1 100008
+get_top_category user1
+get_category user1 'electronics' sort_price asc
+get_category user1 'electronics1' sort_price asc
+get_category user1 'electronics2' sort_price asc
+delete_listing user1 100009
+get_top_category user1
+get_category user1 'electronics' sort_price asc
+get_category user1 'electronics1' sort_price asc
+get_category user1 'electronics2' sort_price asc
+get_top_category user1

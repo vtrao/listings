@@ -20,7 +20,9 @@ public class CliFacadeConstants {
 
     public static final String PRICE_FORMAT_ERROR = "Price should be a valid number \n" + GC_COMMAND_FORMAT;
 
-    public static final String LISTINGID_FORMAT_ERROR = "ListingId should be a valid number \n" + DL_COMMAND_FORMAT;
+    public static final String LISTINGID_FORMAT_ERROR_DL = "ListingId should be a valid number \n" + DL_COMMAND_FORMAT;
+
+    public static final String LISTINGID_FORMAT_ERROR_GL = "ListingId should be a valid number \n" + GL_COMMAND_FORMAT;
 
     private CliFacadeConstants() {
     }

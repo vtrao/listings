@@ -31,6 +31,7 @@ public class ListingServiceImpl implements ListingService {
             throw new UserException(ListingConstants.ERROR_LISTING_NULL_INPUT);
         }
         listingValidator.validate(listing);
+        listingDAO.checkListing(listing);
         categoryService.insertCategory(new Category(listing.getCategoryId()));
         return listingDAO.insertListing(listing);
     }

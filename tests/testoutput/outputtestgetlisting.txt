@@ -1,0 +1,10 @@
+Success
+Success
+100001
+100002
+Phone model 8|Black color, brand new|1234.0|Mon Jan 06 09:00:50 IST 2020|Electronics|user1
+Phone model 8|Black color, brand new|1234.0|Mon Jan 06 09:00:50 IST 2020|Electronics|user1
+Error - unknown user
+Error - not found
+ListingId should be a valid number 
+GET_LISTING <username> <listing_id>

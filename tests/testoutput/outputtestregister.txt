@@ -1,0 +1,7 @@
+UserName cant be less than 2 characters
+Success
+Error - user already existing
+Success
+Error - user already existing
+UserName cant be less than 2 characters
+UserName cant be less than 2 characters

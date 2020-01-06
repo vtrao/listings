@@ -1,0 +1,14 @@
+Success
+Success
+100001
+100002
+Error - listing owner mismatch
+ListingId should be a valid number 
+DELETE_LISTING <username> <listing_id>
+Error - unknown user
+Success
+Error - listing does not exist
+Error - not found
+Error - not found
+Phone model 8 xyz|Black color, brand new|1002.0|Mon Jan 06 09:04:08 IST 2020|Electronics|user1
+Phone model 8 xyz|Black color, brand new|1002.0|Mon Jan 06 09:04:08 IST 2020|Electronics|user1

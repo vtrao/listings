@@ -1,0 +1,18 @@
+register user1
+CREATE_LISTING user123 'Phone model 8' 'Black color, brand new' sadas 'Electronics'
+CREATE_LISTING user1 'Phone model 8' 'Black color, brand new' sadas 'Electronics'
+CREATE_LISTING user1 '' 'Black color, brand new' 1000 'Electronics'
+CREATE_LISTING user1 't' 'Black color, brand new' 1000 'Electronics'
+CREATE_LISTING user1 'Phone model 8' '' 1000 'Electronics'
+CREATE_LISTING user1 'Phone model 8' 'd' 1000 'Electronics'
+CREATE_LISTING user1 'Phone model 8' 'Black color, brand new' 1000 ''
+CREATE_LISTING user1 'Phone model 8' 'Black color, brand new' 1000 'c'
+CREATE_LISTING user1 'Phone model 8' 'Black color, brand new' 1000 'Electronics'
+CREATE_LISTING user1 'Phone model 8' 'Black color, brand new' 1000 'Electronics'
+CREATE_LISTING user1 'Phone model 8' 'Black color, brand new' 1000 'Electronics'
+register user2
+CREATE_LISTING user2 'Phone model 8' 'Black color, brand new' 1000 'Electronics'
+CREATE_LISTING user1 'Phone model 8' 'Black color, brand new' 1001 'Electronics'
+CREATE_LISTING user1 'Phone model 8' 'Black color, brand new' 1000 'Electronicss'
+CREATE_LISTING user1 'Phone model 8' 'Black color, brand neww' 1000 'Electronics'
+CREATE_LISTING user1 'Phone model 88' 'Black color, brand new' 1000 'Electronics'

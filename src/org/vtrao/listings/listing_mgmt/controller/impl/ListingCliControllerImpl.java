@@ -2,7 +2,6 @@ package org.vtrao.listings.listing_mgmt.controller.impl;
 
 import org.vtrao.listings.cli_parser.cli_appfacade.CliFacadeConstants;
 import org.vtrao.listings.commons.GlobalConstants;
-import org.vtrao.listings.commons.Utils;
 import org.vtrao.listings.commons.authentication.Authentication;
 import org.vtrao.listings.commons.exceptions.ListingAppException;
 import org.vtrao.listings.commons.exceptions.UserException;
@@ -149,7 +148,7 @@ public class ListingCliControllerImpl implements ListingCliController {
     }
 
     @Override
-    public void getListingByCategory(String[] inputStrings, ListingCliResponse response)  {
+    public void getListingByCategory(String[] inputStrings, ListingCliResponse response) {
         // Parameter 1: <username>
         if (!parseUserAndAuthenticate(inputStrings, response, ListingCommandType.GL)) {
             return;
@@ -166,13 +165,13 @@ public class ListingCliControllerImpl implements ListingCliController {
 
         // Parameter 3: <sort_type>
         SortType sortType = parseAndGetSortType(inputStrings, response);
-        if ( null == sortType ) {
+        if (null == sortType) {
             return;
         }
 
         // Parameter 4: <sort_order>
         SortOrder sortOrder = parseAndGetSortOrder(inputStrings, response);
-        if ( null == sortOrder ) {
+        if (null == sortOrder) {
             return;
         }
 
@@ -185,7 +184,7 @@ public class ListingCliControllerImpl implements ListingCliController {
             } else {
                 StringBuilder outputList = new StringBuilder();
                 int index = 0;
-                for(; index < listingsList.size() - 1 ; ++index) {
+                for (; index < listingsList.size() - 1; ++index) {
                     outputList.append(listingsList.get(index) + "\n");
                 }
                 outputList.append(listingsList.get(index));
@@ -281,8 +280,12 @@ public class ListingCliControllerImpl implements ListingCliController {
             } else {
                 commandFormat(response, commandType);
             }
-        } catch(NumberFormatException ne) {
-            response.setMessage(CliFacadeConstants.LISTINGID_FORMAT_ERROR);
+        } catch (NumberFormatException ne) {
+            if (commandType.equals(ListingCommandType.GL)) {
+                response.setMessage(CliFacadeConstants.LISTINGID_FORMAT_ERROR_GL);
+            } else {
+                response.setMessage(CliFacadeConstants.LISTINGID_FORMAT_ERROR_DL);
+            }
         }
         return listingId;
     }
@@ -308,7 +311,7 @@ public class ListingCliControllerImpl implements ListingCliController {
         }
     }
 
-    private String removePreAndPostInvertedComma(String input){
-        return input.substring(1, input.length()-1);
+    private String removePreAndPostInvertedComma(String input) {
+        return input.substring(1, input.length() - 1);
     }
 }
